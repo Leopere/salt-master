@@ -9,6 +9,9 @@ case $1 in
   production )
     docker exec -ti salt_master_1 salt '*' state.highstate
     ;;
+  installalias )
+    alias salt='docker exec -it salt_master_1 bash'
+    ;;
   * )
     echo "Your options are:"
     echo "./salt.sh experimental, prone to failure but first step before pushing to main."
